@@ -1,0 +1,40 @@
+.imgprev {
+     
+    display: center;
+    
+    width: 150px;
+   
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgb(2, 2, 133));
+    position: absolute; /* Establece la imagen como posición absoluta */
+    top: 90px; /* Coloca la imagen en la parte superior del contenedor */
+    right: 195px; /* Coloca la imagen en la parte izquierda del contenedor */
+    z-index: 300; /* Define el índice Z para asegurarte de que esté sobre otros elementos */
+  
+   
+    @include sm {
+     
+      margin-top: 90px;
+      left: 186px;
+
+    }
+
+    @include md {
+      left: 380px;
+      margin-top: 80px;
+    }
+    
+    
+     
+  }
+
+
+/* @media (min-width: 640px) {
+    .imgprev {
+      flex-basis: calc(50% - 12px);
+      flex-direction: column;
+    }
+    
+  } */
+
+  

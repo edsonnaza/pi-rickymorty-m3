@@ -1,0 +1,36 @@
+ 
+
+
+  .container {
+
+    align-items: center;
+    margin-bottom: 25px;
+
+  }
+
+ .h1 {
+        
+        
+        font-display: center;
+        background-color: $red;
+        align-items: center;
+        margin-top: -15px;
+        margin-bottom: 5px;
+
+        @include sm {
+          font-size: x-large
+        }
+      
+         
+      }
+
+      h2 {
+        font-size: larger;
+        font-display: center;
+        font-size: larger;
+        
+        align-items: center;
+        margin-bottom: 20px;
+         
+      }
+ 

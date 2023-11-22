@@ -2,6 +2,7 @@
 
 module.exports = {
   env: { browser: true, es2020: true },
+  files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',

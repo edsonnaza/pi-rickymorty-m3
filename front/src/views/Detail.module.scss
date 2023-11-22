@@ -1,0 +1,118 @@
+.wrapper {
+  height: 720px;
+  width: 430px;
+  margin: 50px auto;
+  border-color: #474747;
+  background-color: $secondary-color;
+  align-content: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: center;
+ 
+  justify-content: center;
+  margin-top: 5px;
+}
+
+
+
+.img {
+  border-radius: 20px;
+  width: 356px;
+  height: 300px;
+  align-items: center;
+  margin-top: -115px;
+
+}
+
+.info {
+
+  display: flex;
+
+  width: 356px;
+  border-radius: 20px;
+  background-color: blue;
+
+  align-content: center;
+
+
+  .h2 {
+    margin: 10px 0 47px 38px;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #080606;
+    letter-spacing: 0.2em;
+
+  }
+
+  .text {
+    height: 300px;
+    width: 850px;
+    align-content: center;
+    border: #080606;
+    background-color: $yellow;
+    border-radius: 20px;
+    margin-top: 2px;
+
+    .h1 {
+
+      padding-top: 15px;
+      font-size: 34px;
+      color: $black;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    p {
+      height: 125px;
+      margin: 0 0 0 38px;
+      font-family: 'Playfair Display', serif;
+      color: #8d8d8d;
+      line-height: 1.7em;
+      font-size: 15px;
+      font-weight: lighter;
+      overflow: hidden;
+
+      justify-content: left;
+      align-content: center;
+    }
+
+  }
+
+}
+
+
+.button {
+
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: $white;
+  background-color: $black;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.product-price-btn button:hover {
+  background-color: $primary-color;
+}
+
+.btnDiv {
+  text-align: center;
+  margin-top: 15px;
+
+}

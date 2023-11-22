@@ -1,0 +1,30 @@
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  # Define las variables de entorno necesarias para Netlify
+  NETLIFY_AUTH_TOKEN: "nfp_BzXUUzBhgHxPdrAbp9oyGDjxsKJveWzj53d1"
+  NETLIFY_SITE_ID: "c9338629-69d6-45d6-9d0c-4c4f56638fc3y"
+  REACT_APP_API_URL: "https://api.example.com"
+
+before_script:
+  - npm install
+
+test:
+  stage: test
+  script:
+    - npm run lint
+    - npm run test
+
+build:
+  stage: build
+  script:
+    - npm run build
+
+deploy:
+  stage: deploy
+  script:
+    - npm install -g netlify-cli
+    - netlify deploy --dir=build --prod

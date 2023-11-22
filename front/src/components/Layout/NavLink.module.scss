@@ -1,0 +1,21 @@
+ 
+      .linknav {
+        text-decoration:none;
+         color: inherit;
+       
+         
+        
+         
+         
+
+      
+        
+      }
+
+      .itemnav {
+        &:hover {
+          color: $white;
+        }
+
+         
+      }

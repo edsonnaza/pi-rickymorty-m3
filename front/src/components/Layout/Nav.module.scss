@@ -1,0 +1,174 @@
+.navContainer {
+
+  min-height: 160px;
+  background-color: $black; // hsl(13, 86%, 23%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 35px 10px 90px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+
+
+  @include sm {
+    flex-direction: column;
+    padding: 25px 0px;
+    margin-top: 30px;
+  }
+
+  @include md {
+    padding: 1px 15px;
+    flex-direction: column;
+  }
+
+  .logo {
+    flex: 1;
+    height: 80px;
+
+    @include sm {
+      height: 45px;
+    }
+
+    @include md {
+      margin-top: 25px;
+
+      align-self: center;
+    }
+
+
+
+  }
+
+
+  .secondSection {
+
+    display: flex;
+
+
+
+
+    @include sm {
+      width: 100%;
+      margin-top: 12px;
+
+    }
+
+    .wrapperItems {
+
+      gap: 1px;
+
+
+
+
+      .linknav {
+
+        text-decoration: none;
+        color: inherit;
+
+
+
+
+      }
+
+      .itemnav {
+        &:hover {
+          color: $secondary-color;
+        }
+
+        color: white;
+        font-size: large;
+
+
+        justify-content: center;
+        padding: 16px 10px;
+        font-family:'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+      }
+    }
+
+
+  }
+
+
+
+
+  .thirdSection {
+
+ 
+    display: flex;
+
+
+
+
+    .response {
+      margin-top: 20px;
+      height: 45px;
+      color: #D8000C;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 10px;
+      box-shadow: 1px 1px 1px #aaaaaa;
+      background-color: #FFBABA;
+    }
+
+    .searchbarDiv {
+      margin: 0 50px;
+      /* Agrega espacio entre los divs */
+
+    }
+
+    .randomDiv{
+       
+      margin-block-end: 20px;
+      margin-inline-end: -33px;
+    
+
+    }
+
+    .logoutDiv {
+
+
+
+      @include md {
+        margin-top: -5px;
+        margin-right: 2px;
+      }
+
+
+
+    }
+  }
+
+   .buttonRandom{
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    padding: 21px;
+    color: inherit;
+    background: #ebe6ea;
+    box-shadow: 0px 0px 0px 1px black inset;
+    transition: background 0.4s ease;
+    height: 25px;
+    width: 75px;
+    align-self: center;
+    border-radius: 10px;
+    margin-left: 60px;
+ 
+    &:hover {
+      
+        background: $gray;
+        cursor: pointer;
+        color: $yellow;
+   
+    }
+   
+   
+
+   }
+}

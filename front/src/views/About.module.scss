@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+.about-us{
+  display: flex;
+  justify-content: center;
+  
+    
+    background-color: $secondary-color;
+    margin-inline-end: 250px;
+    margin-inline-start: 250px;
+    border-radius: 24px; 
+
+    @include sm {
+      flex-direction: column;
+      justify-content: center;
+      margin-inline-start: 25px;
+      margin-inline-end: 25px;
+      justify-items: center;
+      align-self: center;
+    }
+
+    @include md {
+      margin-inline-end: 25px;
+    margin-inline-start: 25px;
+    border-radius: 12px; 
+    }
+}
+.pic{
+  height: 300px;
+  width:  500px;
+  border-radius: 20px;
+  flex:wrap;
+  margin-right: 5px;
+  margin-left: 25px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+
+  @include sm {
+    width: 450px;
+    height: 250px;
+    margin-top: 20px;
+    align-self: center;
+    margin-inline-start: 20px;
+     
+  }
+  @include md {
+     
+    width:200px ;
+    height:160px ;
+    gap: 2px;
+    margin-top: 20px;
+    align-self: center;
+ 
+  }
+  
+}
+.about{
+  width:600px;
+  height: 450px;
+
+ 
+  display: flex;
+  
+  
+  align-items: center;
+   
+  justify-content: center;
+  
+  
+
+}
+.text{
+  width: 540px;
+}
+.text h2{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.text h5{
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+span{
+  color: $gray;
+}
+.text p{
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-align: justify;
+
+  @include sm{
+    text-align: justify;
+    font-size: 14px;
+    text-wrap: wrap;
+    width: 450px;
+  }
+}
+.data{
+  margin-top: 30px;
+}
+.hire{
+  font-size: 18px;
+ 
+  color: $black;
+  text-decoration: none;
+  border: 2px;
+  padding: 8px 25px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.hire:hover{
+  background: $yellow;
+  border: 2px solid $blue;
+  cursor: pointer;
+  
+ 
+}
+ 
