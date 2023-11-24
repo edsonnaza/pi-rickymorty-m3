@@ -8,29 +8,31 @@ export const allCharacters = (character) =>{
         payload:character,
     }
 }
-export const addFav = (character) => {
-    return (dispatch)=>{
-        axios.post(`${URL}`, character).then(({data}) =>{
-            return {
-                    type:ADD_FAV,
-                    payload: data,
-                };
-        })
+export const addFav = async (character) => {
+    try {
+        const { data } = await axios.post(`${URL}`, character);
+        return {
+            type: ADD_FAV,
+            payload: data,
+        };
+    } catch (error) {
+        throw new Error(error.message);
     }
-    
 };
 
-export const removeFav = (id) => {
-    return (dispatch) =>{
-        axios.delete(`${URL}/${id}`).then(({data})=>{
-            return {
-               type: REMOVE_FAV,
-               payload: id,
-            };
-        })
+export const removeFav = async (id) => {
+    try {
+        const { data } = await axios.delete(`${URL}/${id}`);
+
+        return {
+            type: REMOVE_FAV,
+            payload: id,
+        };
+    } catch (error) {
+        throw new Error(error.message);
     }
-    
 };
+
 
  
 

@@ -30,10 +30,10 @@ function App() {
    const navigate = useNavigate();
    
 
-   const onLogin = (userInput)=>{
-      
+   const onLogin =  async (userInput)=>{
+      try {
       setLoginMessage("");
-      axios(`${URL}login?email=${userInput.email}&password=${userInput.password}`).then(
+     await axios(`${URL}login?email=${userInput.email}&password=${userInput.password}`).then(
          ({data})=>{
             const {access} = data;
             if(access){
@@ -44,7 +44,10 @@ function App() {
                setLoginMessage('User or password invalid, please try again!');
             }
          }
-      )
+      
+      )} catch (error){
+         throw Error ({error:error.message});
+      }
        
 
       }
@@ -61,10 +64,12 @@ function App() {
        !logged && navigate('/login');
     },[logged]);
 
-   const onSearchPrevImg = (id) =>{
+   const onSearchPrevImg = async (id) =>{
+
+      try { 
       setPreImg(PreIMG_INIT);
       setResponseData(true);
-      axios(`https://rym2.up.railway.app/api/character/${id}?key=${miApiKey}`).then(
+     await axios(`https://rym2.up.railway.app/api/character/${id}?key=${miApiKey}`).then(
          ({ data }) => {
             if(data.name){
                     
@@ -80,10 +85,15 @@ function App() {
             }
          }
       ).catch(error =>console.log(error)) 
+      } catch(error){
+         throw Error({error: error.message});
+      }
       
    }
-   const onSearch = (id)=> {
-     
+   const onSearch = async (id)=> {
+     try {
+
+ 
       const exists = characters.find(char => char.id === Number(id));
 
       if(exists) {
@@ -106,6 +116,9 @@ function App() {
               // window.alert('¡Character not found with the ID!'+ id);
             }
          }).catch(error =>console.log(error))     
+      } catch(error){
+         throw Error ({error:error.message});
+      }
 
       }
        
