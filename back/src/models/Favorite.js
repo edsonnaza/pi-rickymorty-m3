@@ -4,8 +4,8 @@ module.exports = (sequelize) =>{
     sequelize.define('Favorite',{
         id:{
             type:DataTypes.INTEGER,
-            allowNull:false,
-            primaryKey:true
+            primaryKey:true,
+            allowNull:false
         },
         name:{
             type:DataTypes.STRING,
