@@ -84,7 +84,7 @@ describe('Test de RUTAS', () => {
                         id:2,
                         name:'Maria'
                     }
-                ])
+                ]);
             });
         });
       });
