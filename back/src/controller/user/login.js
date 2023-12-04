@@ -1,22 +1,28 @@
 const {User} =require('../../Db_connection');
+const bcrypt = require('bcrypt');
  const login= async (req, res) =>{
     const { email, password } = req.query;
      
     if (!email || !password) {
-      return res.status(400).send('Faltan datos');
+      return res.status(400).send(`Please provide and email:${email} and password.`);
     }
   
     try {
+
       const user = await User.findOne({ where: { email }});
   
-      if (!user.email) {
-        return res.status(404).send(`Usuario no encontrado: ${user.email}`);
+      if (!user) {
+        return res.status(404).send(`Email not registered: ${email}!`);
       }
   
-      if (user.password !== password) {
-        return res.status(403).send(`Contraseña incorrecta: ${user.password}`);
+   
+      
+      const match = await bcrypt.compare(password, user.password);
+
+      if(!match){
+        return res.status(400).send('Invalid password');
       }
-  
+
       return res.json({ access: true });
   
     } catch (error) {
