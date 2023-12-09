@@ -6,6 +6,9 @@ import { FaHeart } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Card(props) {
+ 
+  const {id,name,origin,gender,species,status,image} = props;
+ 
   const count = useSelector((state) => state.count);
   const myFavorites = useSelector((state) => state.myFavorites);
 
@@ -20,20 +23,20 @@ export default function Card(props) {
 
   const handleFavorite = () => {
     const character = {
-      id: props.id,
-      name: props.name,
-      status: props.status,
-      species: props.species,
-      gender: props.gender,
-      origin: props.origin,
-      image: props.image,
+      id, 
+      name, 
+      status, 
+      species, 
+      gender, 
+      origin, 
+      image 
     };
 
- 
+  
 
     if (isFav) {
       setIsFav(false);
-      dispatch(removeFav(props.id));
+      dispatch(removeFav(id));
     } else {
       setIsFav(true);
       dispatch(addFav(character));
@@ -42,7 +45,7 @@ export default function Card(props) {
 
   useEffect(() => {
     myFavorites?.forEach((fav) => {
-      if (fav.id === props.id) {
+      if (fav.id === id) {
         console.log("isFav");
         setIsFav(true);
       }
@@ -50,10 +53,10 @@ export default function Card(props) {
   }, [myFavorites]);
   return (
     <div className={classes.box}>
-      <span>{props.id}</span>
+      <span>{id}</span>
       <button
         className={classes["button"]}
-        onClick={() => closeHandler(props.id)}
+        onClick={() => closeHandler(id)}
       >
         X
       </button>
@@ -69,19 +72,19 @@ export default function Card(props) {
       )}
       <div className={classes["box-top"]}>
         <Link to={`/detail/${props.id}`}>
-          <h3 className={classes["box-title"]}>{props.name}</h3>
+          <h3 className={classes["box-title"]}>{name}</h3>
         </Link>
 
-        <p className={classes["gender"]}>{props.gender}</p>
+        <p className={classes["gender"]}>{gender}</p>
 
-        <p className={classes.description}>{props.species}</p>
-        <p className={classes.description}>{props.status}</p>
-        <p className={classes.description}>{props.origin}</p>
+        <p className={classes.description}>{species}</p>
+        <p className={classes.description}>{status}</p>
+        <p className={classes.description}>{origin}</p>
       </div>
       <img
         className={classes["box-image"]}
-        src={props.image}
-        alt={props.name}
+        src={image}
+        alt={name}
       />
     </div>
   );

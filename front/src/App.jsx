@@ -46,7 +46,8 @@ function App() {
          }
       
       )} catch (error){
-         throw Error ({error:error.message});
+         //throw Error ({error:error.message});
+         setLoginMessage(error.message);
       }
        
 

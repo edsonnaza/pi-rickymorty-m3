@@ -13,8 +13,9 @@ const sequelize = new Sequelize(
     //'postgres://postgres:1234@localhost:5432/rickandmorty',
     `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
    { logging: true, 
-    native: false,
-    alter: true
+     native: false,
+     alter: true,
+     force:false
    }
 );
 

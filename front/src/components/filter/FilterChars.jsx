@@ -12,7 +12,7 @@
     }
 
     const orderByGenderHandler = (ev)=>{
-       const genderValue= ev.target.value;
+       const genderValue= ev.target.value.trim();
        dispatch(filterCardsByGender(genderValue));
 
     }
@@ -27,10 +27,11 @@
       
       <label htmlFor='order'>Gender</label>
       <select onChange={orderByGenderHandler} id='order'>
+      <option value="All">All</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>
-        <option value="unKnown">UnKnown</option>
+        <option value="unknown">unknown</option>
       </select>
 
 
